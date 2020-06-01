@@ -15,6 +15,7 @@ const App = () => {
         const result = await Axios.get(url)
         .then(result=>{
             console.log(result);
+            setQuery(" ");
             
         })
         .catch(error => {
@@ -40,7 +41,12 @@ const App = () => {
              <h1>NEWSPAPER</h1>  
            </header> 
            <form className="search-form" onSubmit={onSubmit}>
-                 <input type="text" placeholder="Search News!" onChange={onChange}/>
+                 <input 
+                 type="text"
+                 placeholder="Search News!" 
+                 onChange={onChange}
+                 value={query}
+                 />
                  <input type="submit" value="Search"/>
             </form>
         </div>
