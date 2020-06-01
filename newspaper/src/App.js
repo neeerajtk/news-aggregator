@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Axios from'axios';
 import './App.css';
 
 const App = () => {
+    const [query, setQuery] = useState("");
+
     const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
     const content = "kerala";
     const url =  `https://gnews.io/api/v3/search?q=${content}&token=${APP_KEY}`;
@@ -20,18 +22,26 @@ const App = () => {
         })
         
         
-    }
+    };
 
+    const onChange = e => {
+        console.log(e.target.value);
+        
+    };
 
+    const onSubmit = e => {
+        e.preventDefault();
+        getData();
+    };
 
     return (
         <div className="App">
           <header className="App-header">
-             <h1 onClick>NEWSPAPER</h1>  
+             <h1>NEWSPAPER</h1>  
            </header> 
            <form className="search-form" onSubmit={onSubmit}>
-                 <input type="text" placeholder="Search News!" />
-                 <input type="submit" value="Seach"/>
+                 <input type="text" placeholder="Search News!" onChange={onChange}/>
+                 <input type="submit" value="Search"/>
             </form>
         </div>
     )
