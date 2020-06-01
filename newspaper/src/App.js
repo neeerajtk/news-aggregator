@@ -4,6 +4,7 @@ import './App.css';
 
 const App = () => {
     const [query, setQuery] = useState("");
+    const [news, setNews] = useState([]);
 
     const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
     // const content = "kerala";
@@ -14,6 +15,7 @@ const App = () => {
     const getData = async () => {
         const result = await Axios.get(url)
         .then(result=>{
+            setNews(result.data.articles);
             console.log(result);
             setQuery(" ");
             
@@ -49,6 +51,11 @@ const App = () => {
                  />
                  <input type="submit" value="Search"/>
             </form>
+            <div className="news">
+                {news !== [] && news.map(newsItem =>
+                    <h2>{newsItem.title}</h2>
+                    )}
+            </div>
         </div>
     )
 }
