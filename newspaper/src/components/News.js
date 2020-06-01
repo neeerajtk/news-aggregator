@@ -4,11 +4,11 @@ const News = ({newsItem}) => {
     const {title,description,image,url} = newsItem;
 
     return (
-        <div className="news">
+        <div className="news_disp">
             <h2>{title}</h2>
             <img src={image} alt={title}/>
-            <a href={url}>URL</a>
-            <button>Read More...</button>
+            <a href={url}>Read More</a>
+            {/* <button>Read More...</button> */}
         </div>
     )
 }
