@@ -3,8 +3,10 @@ import './App.css';
 
 const App = () => {
     return (
-        <div>
-            <h1>NEWSPAPER</h1>   
+        <div className="App">
+          <header className="App-header">
+                 <h1>NEWSPAPER</h1>  
+           </header> 
         </div>
     )
 }
