@@ -21,11 +21,18 @@ const App = () => {
         
         
     }
+
+
+
     return (
         <div className="App">
           <header className="App-header">
-                 <h1 onClick={getData}>NEWSPAPER</h1>  
+             <h1 onClick>NEWSPAPER</h1>  
            </header> 
+           <form className="search-form" onSubmit={onSubmit}>
+                 <input type="text" placeholder="Search News!" />
+                 <input type="submit" value="Seach"/>
+            </form>
         </div>
     )
 }
