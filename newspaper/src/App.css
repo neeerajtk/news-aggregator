@@ -17,5 +17,25 @@
     height: 90px;
     padding: 30px;
     color: white;
+    width: 100%;
     margin-bottom: 2rem;
+
+
+}
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-form{
+    width: 60rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    margin-bottom: 5rem;
+    box-shadow: 1rem 2rem 5rem #aaa;
+    position: relative;
 }

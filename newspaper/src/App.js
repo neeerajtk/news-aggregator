@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Axios from'axios';
+import {v4 as uuidv4} from "uuid"; 
 import './App.css';
 import News from './components/News';
 
@@ -54,7 +55,7 @@ const App = () => {
             </form>
             <div className="news">
                 {news !== [] && news.map(newsItem =>
-                    <News newsItem={newsItem}/>
+                    <News key={uuidv4()} newsItem={newsItem}/>
                     )}
             </div>
         </div>
