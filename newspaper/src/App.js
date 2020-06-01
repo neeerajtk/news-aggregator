@@ -6,8 +6,8 @@ const App = () => {
     const [query, setQuery] = useState("");
 
     const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
-    const content = "kerala";
-    const url =  `https://gnews.io/api/v3/search?q=${content}&token=${APP_KEY}`;
+    // const content = "kerala";
+    const url =  `https://gnews.io/api/v3/search?q=${query}&token=${APP_KEY}`;
     // GET https://gnews.io/api/v3/search?q=example&token=API-Token 
     // b9a8f27653efa822e6533b678916eb30
 
@@ -25,7 +25,7 @@ const App = () => {
     };
 
     const onChange = e => {
-        console.log(e.target.value);
+        setQuery(e.target.value);
         
     };
 
