@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Axios from'axios';
 import './App.css';
+import News from './components/News';
 
 const App = () => {
     const [query, setQuery] = useState("");
@@ -53,7 +54,7 @@ const App = () => {
             </form>
             <div className="news">
                 {news !== [] && news.map(newsItem =>
-                    <h2>{newsItem.title}</h2>
+                    <News newsItem={newsItem}/>
                     )}
             </div>
         </div>
