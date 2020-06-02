@@ -54,7 +54,7 @@ const App = () => {
         const result = await Axios.get(wurl)
         .then(result=>{
             console.log('inside weather func');
-            setWeather(result.data.articles);
+            setWeather(result.data.weather[0].description);
             console.log(result);
             // setQuery(" ");
             
@@ -136,9 +136,9 @@ const App = () => {
                 horizontal: 'left',
                 }}
                 open={open}
-                autoHideDuration={2000}
+                autoHideDuration={6000}
                 onClose={handleClose}
-                message="Note archived"
+                message={'The weather outside is ' + weather}
                 action={
                 <React.Fragment>
                     <Button color="secondary" size="small" onClick={handleClose}>
