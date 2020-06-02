@@ -17,6 +17,8 @@ const App = () => {
     const getData = async () => {
         const result = await Axios.get(url)
         .then(result=>{
+            console.log('inside getdata');
+            
             setNews(result.data.articles);
             console.log(result);
             setQuery(" ");
@@ -55,7 +57,9 @@ const App = () => {
             </form>
             <div className="news">
                 {news !== [] && news.map(newsItem =>
-                    <News key={uuidv4()} newsItem={newsItem}/>
+                    <News key={uuidv4()} newsItem={newsItem}/> 
+                    // console.log(newsItem)
+                    
                     )}
             </div>
         </div>

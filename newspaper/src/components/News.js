@@ -44,8 +44,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function News(newsItem) {
-  const {title,description,image,url} = newsItem;
+function News(props) {
+    console.log("inside news");
+        
+    console.log(props);
+    
+//   const {title,description,image,url} = props.newsItem;
 
   const classes = useStyles();
 
@@ -64,7 +68,7 @@ function News(newsItem) {
             </IconButton>
         }
         title={
-            title
+            props.newsItem.title
         }
         subheader={'5 hours ago'}
       />
@@ -80,8 +84,9 @@ function News(newsItem) {
         {
           <Typography variant="body2" color="textSecondary" component="p">
             {
-              "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
-            }
+            //    "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
+                props.newsItem.title
+           }
           </Typography>
         }
       </CardContent>
@@ -92,9 +97,5 @@ function News(newsItem) {
 
 
 export default function Facebook() {
-  return (
-    <div>
-      <News />
-    </div>
-  );
+  return <News />
 }
