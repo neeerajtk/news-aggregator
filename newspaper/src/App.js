@@ -125,6 +125,7 @@ const App = () => {
         };
         failure = function(message) {
           alert('Cannot retrieve location!');
+          setWfetch(false);
         };
         navigator.geolocation.getCurrentPosition(success, failure, {
           maximumAge: Infinity,
