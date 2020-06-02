@@ -60,8 +60,8 @@ function News(props) {
       <CardHeader
         avatar={
             <Avatar
-              alt="Ted talk"
-              src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg"
+              alt={props.props.title}
+              src="https://image.shutterstock.com/z/stock-vector-n-letter-linked-n-letter-circle-logo-n-o-and-o-n-letter-modern-design-vector-illustration-731097922.jpg"
             />
         }
         action={
