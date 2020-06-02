@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
+    /* background-color: black; */
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -70,7 +71,7 @@
     align-items: flex-start;
   }
   .news_disp{
-    width: 30rem;
+    /* width: 30rem; */
     margin: 3rem;
     display: flex;
     flex-direction: column;
@@ -114,4 +115,3 @@
         border-radius: 0.5rem;
         height: 3rem;
       }
-      
