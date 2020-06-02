@@ -3,7 +3,6 @@ import Axios from 'axios';
 import {v4 as uuidv4} from "uuid"; 
 import './App.css';
 import News from './components/News';
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -137,7 +136,7 @@ const App = () => {
     return (
         <div className="App">
           <header className="App-header">
-             <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> NEWSPAPER.IO</h1>
+             <h1><i className="fa fa-newspaper-o" aria-hidden="true"></i> NEWSPAPER.IO</h1>
              <p> </p>
            </header> 
 
