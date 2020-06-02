@@ -6,6 +6,7 @@ import News from './components/News';
 
 const App = () => {
     const [query, setQuery] = useState("");
+    // const [wquery, setWeatherQuery] = useState("");
     const [news, setNews] = useState([]);
 
     const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
@@ -16,7 +17,11 @@ const App = () => {
     
     
     const WAPP_KEY = "8a8f33585b25d8f61b26f7cfa645d3a5";
-    const wurl = `api.openweathermap.org/data/2.5/weather?q=${wquery}&appid=${WAPP_KEY}`
+    const wurl = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WAPP_KEY}`;
+    // 8a8f33585b25d8f61b26f7cfa645d3a5 
+    // api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={your api key} 
+
+
 
     const getData = async () => {
         const result = await Axios.get(url)
@@ -34,6 +39,23 @@ const App = () => {
         
         
     };
+    
+    // const getWeatherData = async () => {
+    //     const result = await Axios.get(wurl)
+    //     .then(result=>{
+    //         console.log('inside getdata');
+            
+    //         setNews(result.data.articles);
+    //         console.log(result);
+    //         setQuery(" ");
+            
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     })
+        
+        
+    // };
 
     const onChange = e => {
         setQuery(e.target.value);
@@ -45,23 +67,29 @@ const App = () => {
         getData();
     };
 
-    
+
+    if (window.navigator.geolocation) {
+        var failure, success;
+        success = function(position) {
+          console.log(position);
+        };
+        failure = function(message) {
+          alert('Cannot retrieve location!');
+        };
+        navigator.geolocation.getCurrentPosition(success, failure, {
+          maximumAge: Infinity,
+          timeout: 5000
+        });
+    }
 
 
     return (
         <div className="App">
           <header className="App-header">
              <h1> NEWSPAPER.IO</h1>
-             <form className="weather-search-form" onSubmit={onSubmitWeather}>
-                 <input 
-                 type="text"
-                 placeholder="Search City!" 
-                 onChange={onChangeWeather}
-                 value={wquery}
-                 />
-                 <input type="submit" value="Find"/>
-            </form>  
            </header> 
+
+
            <form className="search-form" onSubmit={onSubmit}>
                  <input 
                  type="text"
