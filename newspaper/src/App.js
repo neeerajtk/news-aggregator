@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-
 const App = () => {
     const [query, setQuery] = useState("");
     // const [wquery, setWeatherQuery] = useState("");
@@ -17,7 +16,9 @@ const App = () => {
     const [wfetch, setWfetch] = useState(true);
 
 
-    const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
+    // const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
+    // added new token 
+    const APP_KEY = "4f09e1276dd1075aac00c30e859d0710";
     // const content = "kerala";
     const url =  `https://gnews.io/api/v3/search?q=${query}&token=${APP_KEY}`;
     // GET https://gnews.io/api/v3/search?q=example&token=API-Token 
@@ -44,7 +45,7 @@ const App = () => {
         
     };
 
-
+// Retrives homepage news data 
     const getHomeData = async () => {
         const homeUrl =  `https://gnews.io/api/v3/topics/nation?&token=${APP_KEY}`;
         // GET https://gnews.io/api/v3/topics/world?token=API-Token
