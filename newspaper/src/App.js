@@ -44,7 +44,7 @@ const App = () => {
     return (
         <div className="App">
           <header className="App-header">
-             <h1>NEWSPAPER</h1>  
+             <h1> NEWSPAPER.IO</h1>  
            </header> 
            <form className="search-form" onSubmit={onSubmit}>
                  <input 

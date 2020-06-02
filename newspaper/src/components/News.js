@@ -42,6 +42,10 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 190,
   },
+  typ:{
+    textDecoration: "none",
+    color: "#696969"	
+  }
 }));
 
 function News(props) {
@@ -68,14 +72,14 @@ function News(props) {
             </IconButton>
         }
         title={
-            props.title
+            props.props.title
         }
-        subheader={'5 hours ago'}
+        subheader={props.props.publishedAt}
       />
       {
         <CardMedia
           className={classes.media}
-          image="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512"
+          image={props.props.image}
           title="Ted talk"
         />
       }
@@ -83,11 +87,18 @@ function News(props) {
       <CardContent>
         {
           <Typography variant="body2" color="textSecondary" component="p">
-            {
+           {props.props.description}
+           <br/>
+            Source : {
             //    "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
-                props.props.title
+                props.props.source.name 
            }
+           <br/>
+
+         <a className={classes.typ} href = {props.props.url}>Read More</a>
           </Typography>
+          
+           
         }
       </CardContent>
     </Card>
@@ -99,6 +110,3 @@ function News(props) {
 
 export default News;
 
-// function Facebook() {
-//   return <News />
-// }
