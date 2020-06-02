@@ -25,6 +25,7 @@ const App = () => {
     
    
 
+// Function for retreiving news  
 
     const getData = async () => {
         const result = await Axios.get(url)
@@ -48,6 +49,7 @@ const App = () => {
     // 8a8f33585b25d8f61b26f7cfa645d3a5 
     // api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={your api key} 
 
+// Function for retrieving weather 
 
     const getWeatherData = async (lat,long) => {
         const wurl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WAPP_KEY}`;    
@@ -108,7 +110,7 @@ const App = () => {
     return (
         <div className="App">
           <header className="App-header">
-             <h1> NEWSPAPER.IO</h1>
+             <h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> NEWSPAPER.IO</h1>
              <p> </p>
            </header> 
 
