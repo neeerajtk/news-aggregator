@@ -47,13 +47,15 @@ const App = () => {
 
 // Retrives homepage news data 
     const getHomeData = async () => {
-        const homeUrl =  `https://gnews.io/api/v3/topics/nation?&token=${APP_KEY}`;
+        // const homeUrl =  `https://gnews.io/api/v3/topics/technology?&token=${APP_KEY}`;
+        const homeUrl =  `https://gnews.io/api/v3/search?q=world&token=${APP_KEY}`;
         // GET https://gnews.io/api/v3/topics/world?token=API-Token
         const result = await Axios.get(homeUrl)
         .then(result=>{
             console.log('inside homegetdata');
             
             setNews(result.data.articles);
+            setNews(result.data.articles.newsItem.image);
             console.log(result);
             setQuery(" ");
             
