@@ -5,7 +5,8 @@ The application also displays the weather outside using the users coordinates ,i
 The home page of the application displays trending news on the first load.
 The user can then search for the news topic according to his wish using the Seachbar.
 News collected using Gnews API
-Weather information retrieved using OpenWeatherMaps API 
+Weather information retrieved using OpenWeatherMaps API
+External libraries like fontawesome and material ui are also used in this application.s 
 
 
 
