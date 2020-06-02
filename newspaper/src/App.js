@@ -138,12 +138,12 @@ const App = () => {
                 open={open}
                 autoHideDuration={6000}
                 onClose={handleClose}
-                message={'The weather outside is ' + weather}
+                message={'Weather Outside  : ' + weather}
                 action={
                 <React.Fragment>
-                    <Button color="secondary" size="small" onClick={handleClose}>
+                    {/* <Button color="secondary" size="small" onClick={handleClose}>
                     UNDO
-                    </Button>
+                    </Button> */}
                     <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
                     <CloseIcon fontSize="small" />
                     </IconButton>
