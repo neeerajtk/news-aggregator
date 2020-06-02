@@ -12,7 +12,9 @@ const App = () => {
     const [query, setQuery] = useState("");
     // const [wquery, setWeatherQuery] = useState("");
     const [news, setNews] = useState([]);
+    const [weather, setWeather] = useState("");
     const [open, setOpen] = useState(false);
+    const [wfetch, setWfetch] = useState(true);
 
 
     const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
@@ -43,28 +45,26 @@ const App = () => {
 
      
     const WAPP_KEY = "8a8f33585b25d8f61b26f7cfa645d3a5";
-    // const wurl = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WAPP_KEY}`;
     // 8a8f33585b25d8f61b26f7cfa645d3a5 
     // api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={your api key} 
 
 
-    
-    // const getWeatherData = async () => {
-    //     const result = await Axios.get(wurl)
-    //     .then(result=>{
-    //         console.log('inside getdata');
+    const getWeatherData = async (lat,long) => {
+        const wurl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WAPP_KEY}`;    
+        const result = await Axios.get(wurl)
+        .then(result=>{
+            console.log('inside weather func');
+            setWeather(result.data.articles);
+            console.log(result);
+            // setQuery(" ");
             
-    //         setNews(result.data.articles);
-    //         console.log(result);
-    //         setQuery(" ");
-            
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //     })
+        })
+        .catch(error => {
+            console.log(error);
+        })
         
         
-    // };
+    };
 
     const onChange = e => {
         setQuery(e.target.value);
@@ -83,14 +83,17 @@ const App = () => {
         setOpen(false);
     }
 
+// User Geolocation fetching function 
 
-    if (window.navigator.geolocation) {
+    if (window.navigator.geolocation && wfetch) {
         var failure, success;
         success = function(position) {
           console.log(position);
           var lat = position.coords.latitude;
           var long = position.coords.longitude;
+          getWeatherData(lat, long);
           setOpen(true);
+          setWfetch(false);
         };
         failure = function(message) {
           alert('Cannot retrieve location!');
@@ -126,7 +129,7 @@ const App = () => {
                     
                     )}
             </div>
-
+{/* Snackbar for showing weather information  */}
             <Snackbar
                 anchorOrigin={{
                 vertical: 'bottom',
