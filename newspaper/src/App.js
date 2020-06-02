@@ -44,6 +44,28 @@ const App = () => {
         
     };
 
+
+    const getHomeData = async () => {
+        const homeUrl =  `https://gnews.io/api/v3/topics/nation?&token=${APP_KEY}`;
+        // GET https://gnews.io/api/v3/topics/world?token=API-Token
+        const result = await Axios.get(homeUrl)
+        .then(result=>{
+            console.log('inside homegetdata');
+            
+            setNews(result.data.articles);
+            console.log(result);
+            setQuery(" ");
+            
+        })
+        .catch(error => {
+            console.log(error);
+        })
+        
+        
+    };
+
+
+
      
     const WAPP_KEY = "8a8f33585b25d8f61b26f7cfa645d3a5";
     // 8a8f33585b25d8f61b26f7cfa645d3a5 
@@ -96,6 +118,7 @@ const App = () => {
           getWeatherData(lat, long);
           setOpen(true);
           setWfetch(false);
+          getHomeData();
         };
         failure = function(message) {
           alert('Cannot retrieve location!');
