@@ -57,7 +57,7 @@ const App = () => {
             </form>
             <div className="news">
                 {news !== [] && news.map(newsItem =>
-                    <News key={uuidv4()} newsItem={newsItem}/> 
+                    <News key={uuidv4()} props={newsItem}/> 
                     // console.log(newsItem)
                     
                     )}

@@ -68,7 +68,7 @@ function News(props) {
             </IconButton>
         }
         title={
-            props.newsItem.title
+            props.title
         }
         subheader={'5 hours ago'}
       />
@@ -85,17 +85,20 @@ function News(props) {
           <Typography variant="body2" color="textSecondary" component="p">
             {
             //    "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
-                props.newsItem.title
+                props.props.title
            }
           </Typography>
         }
       </CardContent>
     </Card>
   );
+  return News;
 }
 
 
 
-export default function Facebook() {
-  return <News />
-}
+export default News;
+
+// function Facebook() {
+//   return <News />
+// }
