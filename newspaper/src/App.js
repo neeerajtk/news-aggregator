@@ -6,6 +6,26 @@ import News from './components/News';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+
+const useStyles = makeStyles((theme) => ({
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+    },
+    selectEmpty: {
+      marginTop: theme.spacing(2),
+    },
+  }));
+
+
 const App = () => {
     const [query, setQuery] = useState("");
     // const [wquery, setWeatherQuery] = useState("");
@@ -20,7 +40,7 @@ const App = () => {
     const APP_KEY = "4f09e1276dd1075aac00c30e859d0710";
     // const content = "kerala";
     const url =  `https://gnews.io/api/v3/search?q=${query}&token=${APP_KEY}`;
-    // GET https://gnews.io/api/v3/search?q=example&token=API-Token 
+    // GET https://gnews.io/api/v3/search?apple&lang=ml&token=4f09e1276dd1075aac00c30e859d0710 
     // b9a8f27653efa822e6533b678916eb30
     
    
@@ -133,6 +153,17 @@ const App = () => {
     }
 
 
+//  dropdown weather 
+
+    const classes = useStyles();
+    const [lang, setLang] = React.useState('');
+
+    const handleChange = (event) => {
+        setLang(event.target.value);
+    };
+
+
+
     return (
         <div className="App">
           <header className="App-header">
@@ -148,6 +179,25 @@ const App = () => {
                  onChange={onChange}
                  value={query}
                  />
+
+
+                    <FormControl className={classes.formControl}>
+                            <InputLabel id="demo-simple-select-label">Language</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={lang}
+                                onChange={handleChange}
+                            >
+                            <MenuItem value={'en'}>English (Default)</MenuItem>
+                            <MenuItem value={'fr'}>French</MenuItem>
+                            <MenuItem value={'de'}>German</MenuItem>
+                            <MenuItem value={'it'}>Italian</MenuItem>
+                            </Select>
+                    </FormControl>
+
+
+
                  <input type="submit" value="Search"/>
             </form>
             <div className="news">
