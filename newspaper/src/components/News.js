@@ -1,26 +1,3 @@
-// import React from 'react'
-
-// const News = ({newsItem}) => {
-//     const {title,description,image,url} = newsItem;
-
-//     return (
-//         <div className="news_disp">
-//             <h2>{title}</h2>
-//             <img src={image} alt={title}/>
-//             <a href={url}>Read More</a>
-//             {/* <button>Read More...</button> */}
-//         </div>
-//     )
-// }
-
-// export default News
-
-
-
-
-// ******** 
-
-
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -56,6 +33,9 @@ function News(props) {
   const classes = useStyles();
 
   return (
+
+    // Material UI Card which displays news items  
+
     <Card className={classes.card}>
       <CardHeader
         avatar={
@@ -88,7 +68,6 @@ function News(props) {
            {props.props.description}
            <br/>
             Source : {
-            //    "Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:"
                 props.props.source.name 
            }
            <br/>
@@ -101,7 +80,6 @@ function News(props) {
       </CardContent>
     </Card>
   );
-  return News;
 }
 
 

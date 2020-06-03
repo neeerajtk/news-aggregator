@@ -7,13 +7,14 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
+
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
+// Styles for material UI select button 
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -37,7 +38,11 @@ const App = () => {
 
     // const APP_KEY = "b9a8f27653efa822e6533b678916eb30";
     // added new token 
+
+    // API Key for fetching news , Had to create 2 keys due to 100 requests traffic limitations
+
     const APP_KEY = "4f09e1276dd1075aac00c30e859d0710";
+
     // const content = "kerala";
     // const url =  `https://gnews.io/api/v3/search?q=${query}&token=${APP_KEY}`;
     // GET https://gnews.io/api/v3/search?apple&lang=ml&token=4f09e1276dd1075aac00c30e859d0710 
@@ -89,7 +94,7 @@ const App = () => {
     };
 
 
-
+    // API Key for weather 
      
     const WAPP_KEY = "8a8f33585b25d8f61b26f7cfa645d3a5";
     // 8a8f33585b25d8f61b26f7cfa645d3a5 
@@ -155,7 +160,7 @@ const App = () => {
     }
 
 
-//  dropdown weather 
+//  Dropdown for weather 
 
     const classes = useStyles();
     const [lang, setLang] = React.useState('en');

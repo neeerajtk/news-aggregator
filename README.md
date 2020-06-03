@@ -1,9 +1,9 @@
 # Newspaper.io
 
-Newspaper is a API based React Application for reading and surfing through news articles online. 
-The application also displays the weather outside using the users coordinates ,in a snackbar.
+Newspaper is a API based React Application for reading and surfing through news articles online in user's preffered language. 
+The application also displays the weather outside using the users coordinates ,in a snackbar which lasts for 6 seconds after the first page load.
 The home page of the application displays trending news on the first load.
-The user can then search for the news topic according to his wish using the Seachbar.
+The user can then search for the news topic according in his/her preffered language using the Seachbar.
 News collected using Gnews API
 Weather information retrieved using OpenWeatherMaps API
 External libraries like fontawesome and material ui are also used in this application.s 
