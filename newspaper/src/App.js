@@ -39,7 +39,7 @@ const App = () => {
     // added new token 
     const APP_KEY = "4f09e1276dd1075aac00c30e859d0710";
     // const content = "kerala";
-    const url =  `https://gnews.io/api/v3/search?q=${query}&token=${APP_KEY}`;
+    // const url =  `https://gnews.io/api/v3/search?q=${query}&token=${APP_KEY}`;
     // GET https://gnews.io/api/v3/search?apple&lang=ml&token=4f09e1276dd1075aac00c30e859d0710 
     // b9a8f27653efa822e6533b678916eb30
     
@@ -48,6 +48,8 @@ const App = () => {
 // Function for retreiving news  
 
     const getData = async () => {
+        const url =`https://gnews.io/api/v3/search?q=${query}&lang=${lang}&token=${APP_KEY} `; 
+
         const result = await Axios.get(url)
         .then(result=>{
             console.log('inside getdata');
@@ -156,7 +158,7 @@ const App = () => {
 //  dropdown weather 
 
     const classes = useStyles();
-    const [lang, setLang] = React.useState('');
+    const [lang, setLang] = React.useState('en');
 
     const handleChange = (event) => {
         event.preventDefault();
