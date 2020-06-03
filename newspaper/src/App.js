@@ -159,6 +159,7 @@ const App = () => {
     const [lang, setLang] = React.useState('');
 
     const handleChange = (event) => {
+        event.preventDefault();
         console.log(event.target.value);
         setLang(event.target.value);
     };
