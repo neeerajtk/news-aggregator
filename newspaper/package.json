@@ -2,7 +2,7 @@
   "name": "newspaper",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://neeerajtk.github.io/news-aggregator/newspaper",
+  "homepage": "https://neeerajtk.github.io/news-aggregator",
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
