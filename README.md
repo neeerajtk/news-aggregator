@@ -4,9 +4,9 @@ Newspaper is a API based React Application for reading and surfing through news 
 The application also displays the weather outside using the users coordinates ,in a snackbar which lasts for 6 seconds after the first page load.
 The home page of the application displays trending news on the first load.
 The user can then search for the news topic according in his/her preffered language using the Seachbar.
-News collected using Gnews API
-Weather information retrieved using OpenWeatherMaps API
-External libraries like fontawesome and material ui are also used in this application.s 
+News collected using Gnews API, 
+weather information retrieved using OpenWeatherMaps API,
+External libraries like Fontawesome and MaterialUI are also used.
 
 
 
