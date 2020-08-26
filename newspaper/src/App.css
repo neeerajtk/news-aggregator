@@ -74,8 +74,15 @@
     justify-content: center;
     align-items: flex-start;
   }
+
+  .makeStyles-card-3 {
+    max-height: 440px !important;
+
+  }
+
   .news_disp{
     /* width: 30rem; */
+    max-height: 400px !important;
     margin: 3rem;
     display: flex;
     flex-direction: column;
