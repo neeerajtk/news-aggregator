@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import {altImage} from '../../src/altimg.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -56,11 +57,19 @@ function News(props) {
         subheader={props.props.publishedAt}
       />
       {
+        //  props.props.image ? 
+        // <CardMedia
+        //   className={classes.media}
+        //   image={altImage}
+        //   title="Ted talk"
+        // />
+        // :
         <CardMedia
-          className={classes.media}
-          image={props.props.image}
-          title="Ted talk"
-        />
+        className={classes.media}
+       
+        image={props.props.image}
+        title="Ted talk"
+      />
       }
 
       <CardContent>
